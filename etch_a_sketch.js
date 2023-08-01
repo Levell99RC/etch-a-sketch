@@ -2,6 +2,11 @@ const body = document.querySelector('body');
 const grid = document.createElement('div');
 grid.classList.add('grid');
 
+body.style.display = 'flex';
+body.style.justifyContent = 'center';
+body.style.marginTop = '40px';
+
+
 for (let a = 1; a <= 16; a++) {
     let row = document.createElement('div');
     row.classList.add(`row${a}`);
