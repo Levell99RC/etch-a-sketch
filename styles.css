@@ -1,5 +1,13 @@
 body {
     display:  flex;
     justify-content: center;
+    flex-direction: column;
     margin-top: '40px';
+}
+
+.changeGrid {
+    align-self: center;
+    width: 140px;
+    flex-grow: 0;
+    margin: 40px 0px;
 }
