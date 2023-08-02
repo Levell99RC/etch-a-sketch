@@ -30,15 +30,13 @@ function createGrid(size) {
             box.classList.add(`box${((a - 1) * size) + b}`);
             box.style.width = `${900 / size}px`;
             box.style.height = `${900 / size}px`;
-            box.style.backgroundColor = 'white';
-            //box.style.border = '1px solid black';
+            box.style.backgroundColor = 'black';
             box.addEventListener('mouseover', changeColorMouseover);
             box.addEventListener('mouseout', changeColorMouseout);
             row.appendChild(box);
         }
         grid.appendChild(row);
     }
-    grid.style.border = '1px solid black';
     
     body.appendChild(grid);
 }
@@ -49,13 +47,16 @@ function removeGrid() {
 }
 
 function changeColorMouseover() {
-    this.style.backgroundColor = 'red';
+    this.style.backgroundColor = 
+        `rgb(${Math.round(Math.random() * 255)},
+        ${Math.round(Math.random() * 255)}, 
+        ${Math.round(Math.random() * 255)})`;
     this.style.transitionDelay = '0s';
     this.style.transition = '0s';
 }
 
 function changeColorMouseout() {
-    this.style.backgroundColor = 'white';
+    this.style.backgroundColor = 'black';
     this.style.transitionDelay = '0.5s';
     this.style.transition = '1.5s';
 }
