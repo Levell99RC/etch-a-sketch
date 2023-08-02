@@ -37,6 +37,11 @@ function createGrid(size) {
     body.appendChild(grid);
 }
 
+function removeGrid() {
+    let grid = document.querySelector('.grid');
+    body.removeChild(grid);
+}
+
 function changeColorMouseover() {
     this.style.backgroundColor = 'red';
     this.style.transitionDelay = '0s';
