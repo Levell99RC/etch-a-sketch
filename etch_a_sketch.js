@@ -6,6 +6,9 @@ createGrid(gridSize);
 const gridSizeButton = document.querySelector('.changeGrid');
 gridSizeButton.addEventListener('click', function () {
     gridSize = prompt('How many squares per side would you like?');
+    if (gridSize > 100) {
+        gridSize = 100;
+    }
     removeGrid();
     createGrid(gridSize);
 });
