@@ -1,8 +1,16 @@
 const body = document.querySelector('body');
+let gridSize = 16; //Initial size of grid is 16x16
 
-createGrid();
+createGrid(gridSize);
 
-function createGrid(size = 16) {
+const gridSizeButton = document.querySelector('.changeGrid');
+gridSizeButton.addEventListener('click', function () {
+    gridSize = prompt('How many squares per side would you like?');
+    removeGrid();
+    createGrid(gridSize);
+});
+
+function createGrid(size) {
     const grid = document.createElement('div');
 
     grid.classList.add('grid');
