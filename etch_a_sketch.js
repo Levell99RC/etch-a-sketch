@@ -15,6 +15,8 @@ gridSizeButton.addEventListener('click', function () {
 
 function createGrid(size) {
     const grid = document.createElement('div');
+    grid.style.width = '900px';
+    grid.style.height = '900px';
 
     grid.classList.add('grid');
     grid.style.alignSelf = 'center';
@@ -26,16 +28,17 @@ function createGrid(size) {
         for (let b = 1; b <= size; b++) {
             let box = document.createElement('div');
             box.classList.add(`box${((a - 1) * size) + b}`);
-            box.style.width = '20px';
-            box.style.height = '20px';
+            box.style.width = `${900 / size}px`;
+            box.style.height = `${900 / size}px`;
             box.style.backgroundColor = 'white';
-            box.style.border = '1px solid black';
+            //box.style.border = '1px solid black';
             box.addEventListener('mouseover', changeColorMouseover);
             box.addEventListener('mouseout', changeColorMouseout);
             row.appendChild(box);
         }
         grid.appendChild(row);
     }
+    grid.style.border = '1px solid black';
     
     body.appendChild(grid);
 }
